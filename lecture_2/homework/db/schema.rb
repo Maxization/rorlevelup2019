@@ -16,11 +16,15 @@ ActiveRecord::Schema.define(version: 2019_03_30_130701) do
   enable_extension "plpgsql"
 
   create_table "barricades", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "amount_of_wood", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "castles", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "number_of_residents", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,16 +37,22 @@ ActiveRecord::Schema.define(version: 2019_03_30_130701) do
   end
 
   create_table "strongholds", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "number_of_bricks", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "towers", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "heigh", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "walls", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "thickness", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
